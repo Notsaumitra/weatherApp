@@ -71,7 +71,7 @@ export class HeaderComponent implements OnInit {
     this.weather.getWeatherByLocation(this.location).subscribe(data=>{
       this.weatherData=data
       this.str=data.weather[0].icon;
-    this.iconSrc = `http://openweathermap.org/img/wn/${this.str}@2x.png`;
+    this.iconSrc = `https://openweathermap.org/img/wn/${this.str}@2x.png`;
     this.value=true;
   },
   err=>this.errMessage=err);
@@ -81,7 +81,7 @@ public getWeatherBySelection(){
   this.weather.getWeatherBySelection(this.selectedPlace).subscribe(data=>{
     this.weatherData=data
     this.str=data.weather[0].icon;
-  this.iconSrc = `http://openweathermap.org/img/wn/${this.str}.png`;
+  this.iconSrc = `https://openweathermap.org/img/wn/${this.str}.png`;
   this.value=true;
 },
 err=>this.errMessage=err);
@@ -128,10 +128,10 @@ public getForecast(){
   this.f3Str=data.list[24].weather[0].icon;
   this.f4Str=data.list[32].weather[0].icon;
 
-this.f1iconSrc = `http://openweathermap.org/img/wn/${this.f1Str}@2x.png`;
-this.f2iconSrc = `http://openweathermap.org/img/wn/${this.f2Str}@2x.png`;
-this.f3iconSrc = `http://openweathermap.org/img/wn/${this.f3Str}@2x.png`;
-this.f4iconSrc = `http://openweathermap.org/img/wn/${this.f2Str}@2x.png`;
+this.f1iconSrc = `https://openweathermap.org/img/wn/${this.f1Str}@2x.png`;
+this.f2iconSrc = `https://openweathermap.org/img/wn/${this.f2Str}@2x.png`;
+this.f3iconSrc = `https://openweathermap.org/img/wn/${this.f3Str}@2x.png`;
+this.f4iconSrc = `https://openweathermap.org/img/wn/${this.f2Str}@2x.png`;
   
 
   },
@@ -146,10 +146,10 @@ public getForecastByLocation(){
     this.f3Str=data.list[24].weather[0].icon;
     this.f4Str=data.list[32].weather[0].icon;
       
-  this.f1iconSrc = `http://openweathermap.org/img/wn/${this.f1Str}@2x.png`;
-  this.f2iconSrc = `http://openweathermap.org/img/wn/${this.f2Str}@2x.png`;
-  this.f3iconSrc = `http://openweathermap.org/img/wn/${this.f3Str}@2x.png`;
-  this.f4iconSrc = `http://openweathermap.org/img/wn/${this.f2Str}@2x.png`;
+  this.f1iconSrc = `https://openweathermap.org/img/wn/${this.f1Str}@2x.png`;
+  this.f2iconSrc = `https://openweathermap.org/img/wn/${this.f2Str}@2x.png`;
+  this.f3iconSrc = `https://openweathermap.org/img/wn/${this.f3Str}@2x.png`;
+  this.f4iconSrc = `https://openweathermap.org/img/wn/${this.f2Str}@2x.png`;
   
 },
 err=>this.errMessage=err);
@@ -164,10 +164,10 @@ this.weather.getForecastBySelection(this.selectedPlace).subscribe(data=>{
   this.f3Str=data.list[24].weather[0].icon;
   this.f4Str=data.list[32].weather[0].icon;
 
-this.f1iconSrc = `http://openweathermap.org/img/wn/${this.f1Str}@2x.png`;
-this.f2iconSrc = `http://openweathermap.org/img/wn/${this.f2Str}@2x.png`;
-this.f3iconSrc = `http://openweathermap.org/img/wn/${this.f3Str}@2x.png`;
-this.f4iconSrc = `http://openweathermap.org/img/wn/${this.f2Str}@2x.png`;
+this.f1iconSrc = `https://openweathermap.org/img/wn/${this.f1Str}@2x.png`;
+this.f2iconSrc = `https://openweathermap.org/img/wn/${this.f2Str}@2x.png`;
+this.f3iconSrc = `https://openweathermap.org/img/wn/${this.f3Str}@2x.png`;
+this.f4iconSrc = `https://openweathermap.org/img/wn/${this.f2Str}@2x.png`;
   
 
 },

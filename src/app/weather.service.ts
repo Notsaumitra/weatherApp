@@ -27,38 +27,38 @@ export class WeatherService {
    }
 
   public getWeather():Observable<any>{
-  let url=`http://api.openweathermap.org/data/2.5/weather?lat=${this.latitude}&lon=${this.longitude}&appid=324bac5c7749af55301fd724bb6147ff`;
+  let url=`https://api.openweathermap.org/data/2.5/weather?lat=${this.latitude}&lon=${this.longitude}&appid=324bac5c7749af55301fd724bb6147ff`;
     return this.http.get<any>(url).
     pipe(catchError(this.errorHandler));
   }
 
   public getForecast():Observable<any>{
-    let url=`http://api.openweathermap.org/data/2.5/forecast?lat=${this.latitude}&lon=${this.longitude}&appid=324bac5c7749af55301fd724bb6147ff`;
+    let url=`https://api.openweathermap.org/data/2.5/forecast?lat=${this.latitude}&lon=${this.longitude}&appid=324bac5c7749af55301fd724bb6147ff`;
       return this.http.get<any>(url).
       pipe(catchError(this.errorHandler));
     }
 
   public getWeatherByLocation(location):Observable<any>{
-    let url=`http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=324bac5c7749af55301fd724bb6147ff`;
+    let url=`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=324bac5c7749af55301fd724bb6147ff`;
     return this.http.get<any>(url).
     pipe(catchError(this.errorHandler));
   
   }
   public getForecastByLocation(location):Observable<any>{
-    let url=`http://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=324bac5c7749af55301fd724bb6147ff`;
+    let url=`https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=324bac5c7749af55301fd724bb6147ff`;
     return this.http.get<any>(url).
     pipe(catchError(this.errorHandler));
   
   }
 
   public getWeatherBySelection(place):Observable<any>{
-    let url=`http://api.openweathermap.org/data/2.5/weather?q=${place}&appid=324bac5c7749af55301fd724bb6147ff`;
+    let url=`https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=324bac5c7749af55301fd724bb6147ff`;
     return this.http.get<any>(url).
     pipe(catchError(this.errorHandler));
   }
 
   public getForecastBySelection(place):Observable<any>{
-    let url=`http://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=324bac5c7749af55301fd724bb6147ff`;
+    let url=`https://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=324bac5c7749af55301fd724bb6147ff`;
     return this.http.get<any>(url).
     pipe(catchError(this.errorHandler));
   }
