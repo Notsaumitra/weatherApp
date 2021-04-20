@@ -38,13 +38,13 @@ export class WeatherService {
       pipe(catchError(this.errorHandler));
     }
 
-  public getWeatherByLocation():Observable<any>{
+  public getWeatherByLocation(location):Observable<any>{
     let url=`http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=324bac5c7749af55301fd724bb6147ff`;
     return this.http.get<any>(url).
     pipe(catchError(this.errorHandler));
   
   }
-  public getForecastByLocation():Observable<any>{
+  public getForecastByLocation(location):Observable<any>{
     let url=`http://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=324bac5c7749af55301fd724bb6147ff`;
     return this.http.get<any>(url).
     pipe(catchError(this.errorHandler));

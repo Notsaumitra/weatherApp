@@ -68,7 +68,7 @@ export class HeaderComponent implements OnInit {
   }
 
   public getWeatherByLocation(){
-    this.weather.getWeatherByLocation().subscribe(data=>{
+    this.weather.getWeatherByLocation(this.location).subscribe(data=>{
       this.weatherData=data
       this.str=data.weather[0].icon;
     this.iconSrc = `http://openweathermap.org/img/wn/${this.str}@2x.png`;
@@ -78,7 +78,7 @@ export class HeaderComponent implements OnInit {
 
 }
 public getWeatherBySelection(){
-  this.weather.getWeatherBySelection(this.place).subscribe(data=>{
+  this.weather.getWeatherBySelection(this.selectedPlace).subscribe(data=>{
     this.weatherData=data
     this.str=data.weather[0].icon;
   this.iconSrc = `http://openweathermap.org/img/wn/${this.str}.png`;
@@ -139,7 +139,7 @@ this.f4iconSrc = `http://openweathermap.org/img/wn/${this.f2Str}@2x.png`;
 }
 
 public getForecastByLocation(){
-  this.weather.getForecastByLocation().subscribe(data=>{
+  this.weather.getForecastByLocation(this.location).subscribe(data=>{
     this.forecastData=data
     this.f1Str=data.list[8].weather[0].icon;
     this.f2Str=data.list[16].weather[0].icon;
@@ -156,7 +156,7 @@ err=>this.errMessage=err);
 
 }
 public getForecastBySelection(){
-this.weather.getForecastBySelection(this.place).subscribe(data=>{
+this.weather.getForecastBySelection(this.selectedPlace).subscribe(data=>{
   this.forecastData=data
   this.f1Str=data.list[8].weather[0].icon;
   this.f2Str=data.list[16].weather[0].icon;
