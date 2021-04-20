@@ -1,0 +1,72 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+<ul class="navbar-nav">
+    <li class="nav-item active">
+      <a (click)="getWeather()" (click)="view()" (click)="getForecast()" class="nav-link" href="#">Current City Weather</a>
+    </li>
+  </ul>
+  <div class="navbar-nav ml-auto">
+    <form class="userInp ">
+        <input id="input" type="search" [(ngModel)]="location" name="input" value="">
+        <button type="submit" class="btn btn-warning ml-3" (click)="getWeatherByLocation()" (click)="getForecastByLocation()" (click)="save()" (click)="view()">Search</button>
+    </form>
+</div>
+  </nav>
+
+
+  <div>
+    <button type="submit"  (click)="view()" (click)="getWeather()" (click)="getForecast()" (click)="show()" class="btn btn-success">Previous Locations</button>
+  </div>
+  <form >
+    <div class="form-group" *ngIf="edited">
+      <select class="form-control custom-select" name="select" [(ngModel)]="selectedPlace" >
+        <option>Choose a city</option>
+        <option *ngFor="let data of place" >{{data}}</option>
+      </select>
+      <button (click)="getWeatherBySelection()" (click)="getForecastBySelection()">Get Weather Data</button>
+      <button (click)="delete()" (click)="view()">Delete</button>
+    </div>
+  </form>
+
+  <div class="d-flex justify-content-center">
+    <h1>Today's Weather-</h1>
+  </div>
+
+<div class="d-flex justify-content-center">
+  <div class="card " style="width: 12rem;">
+    <h1>{{weatherData?.name}}</h1>
+    <img src={{iconSrc}}>
+    <p *ngIf="value">Temperature : {{weatherData?.main.temp-273 | number : '2.2-2'}}°C</p>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center">
+  <h1>Forecast<i>(Time is in GMT)-</i></h1>
+</div>
+
+<div class="d-flex justify-content-center">
+    <div class="card ml-3" style="width: 12rem;">
+      <img src={{f1iconSrc}}>
+      <p>Temperature : {{forecastData.list[8].main.temp-273 | number : '2.2-2'}}°C</p>
+      <p>{{forecastData.list[8].dt_txt}}</p>
+    </div>
+    <div class="card " style="width: 12rem;">
+      <img src={{f2iconSrc}}>
+      <p>Temperature : {{forecastData.list[16].main.temp-273 | number : '2.2-2'}}°C</p>
+      <p>{{forecastData.list[16].dt_txt}}</p>
+    </div>
+    <div class="card " style="width: 12rem;">
+      <img src={{f3iconSrc}}>
+      <p>Temperature : {{forecastData.list[24].main.temp-273 | number : '2.2-2'}}°C</p>
+      <p>{{forecastData.list[24].dt_txt}}</p>
+    </div>
+    <div class="card " style="width: 12rem;">
+      <img src={{f4iconSrc}}>
+      <p>Temperature : {{forecastData.list[32].main.temp-273 | number : '2.2-2'}}°C</p>
+      <p>{{forecastData.list[32].dt_txt}}</p>
+    </div>
+</div>
+
+
+
+<router-outlet></router-outlet>
